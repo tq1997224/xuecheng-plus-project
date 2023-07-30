@@ -4,10 +4,10 @@ import lombok.Data;
 import lombok.ToString;
 
 /**
+ * @description TODO 课程查询参数Dto模型类
  * @author Mr.M
+ * @date 2022/9/6 14:36
  * @version 1.0
- * @description 课程查询条件模型类
- * @date 2023/2/11 15:37
  */
 @Data
 @ToString

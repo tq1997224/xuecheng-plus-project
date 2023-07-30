@@ -6,10 +6,7 @@ import com.xuecheng.content.model.dto.QueryCourseParamsDto;
 import com.xuecheng.content.model.po.CourseBase;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -18,17 +15,16 @@ import java.util.List;
 /**
  * @author Mr.M
  * @version 1.0
- * @description TODO
+ * @description TODO 查询接口
  * @date 2023/2/11 15:44
  */
 @Api(value = "课程信息管理接口",tags = "课程信息管理接口")
-@RestController
+@RestController //相当于@controller和responseBody
 public class CourseBaseInfoController {
 
     @ApiOperation("课程查询接口")
-    @PostMapping("/course/list")
+    @GetMapping("/course/list")
     public PageResult<CourseBase> list(PageParams pageParams, @RequestBody(required=false) QueryCourseParamsDto queryCourseParamsDto) {
-
 
         CourseBase courseBase = new CourseBase();
         courseBase.setName("测试名称");
