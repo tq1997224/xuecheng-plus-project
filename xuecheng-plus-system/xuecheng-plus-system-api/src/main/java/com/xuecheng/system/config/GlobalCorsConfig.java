@@ -7,18 +7,20 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+
 /**
  * @author: Tq
  * @Desc: TODO
  * @create: 2023-07-31 16:48
  **/
-
 @Configuration
 public class GlobalCorsConfig {
 
+    /**
+     * 允许跨域调用的过滤器
+     */
     @Bean
-    public CorsFilter corsFilter(){
-
+    public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
         //允许白名单域名进行跨域调用
         config.addAllowedOrigin("*");
@@ -31,6 +33,6 @@ public class GlobalCorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
-
     }
 }
+
